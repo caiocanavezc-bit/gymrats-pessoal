@@ -16,7 +16,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['icon.svg', 'apple-touch-icon.png', 'pwa-192x192.png', 'pwa-512x512.png'],
+      includeAssets: ['icon.svg', 'apple-touch-icon-v2.png', 'pwa-192x192-v2.png', 'pwa-512x512-v2.png'],
       manifest: {
         id: './',
         name: 'GYMRATS',
@@ -30,9 +30,9 @@ export default defineConfig({
         start_url: './',
         scope: './',
         icons: [
-          { src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' },
-          { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png' },
-          { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+          { src: 'pwa-192x192-v2.png', sizes: '192x192', type: 'image/png' },
+          { src: 'pwa-512x512-v2.png', sizes: '512x512', type: 'image/png' },
+          { src: 'pwa-512x512-v2.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
           { src: 'icon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' },
         ],
       },

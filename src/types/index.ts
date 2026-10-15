@@ -1,0 +1,9 @@
+export type WorkoutLetter='A'|'B'|'C';
+export interface Exercise{id:string;name:string;muscleGroup:string;workout:WorkoutLetter;sets:number;repsMin:number;repsMax:number;restSeconds:number;rirMin:number;rirMax:number;instructions:string;alternative:string;order:number;active:boolean;createdAt:string;updatedAt:string}
+export interface PerformedSet{id:string;exerciseId:string;setNumber:number;weight?:number;reps?:number;rir?:number;completed:boolean;notes?:string}
+export interface PerformedExercise{exerciseId:string;exerciseName:string;muscleGroup:string;plannedSets:number;repsMin:number;repsMax:number;restSeconds:number;rirMax:number;sets:PerformedSet[]}
+export interface WorkoutSession{id:string;letter:WorkoutLetter;startedAt:string;completedAt?:string;durationSeconds?:number;status:'draft'|'completed';exercises:PerformedExercise[];notes?:string}
+export interface UserPreferences{id:'user';name:string;goal:string;weeklyFrequency:3|4|5;soundEnabled:boolean;defaultTimerSeconds:number}
+export interface AppSettings{id:'settings';schemaVersion:number;seeded:boolean;nextWorkoutOverride?:WorkoutLetter}
+export interface WorkoutTemplate{id:WorkoutLetter;name:string;muscleGroups:string[]}
+export interface ImportRow{exercise:Omit<Exercise,'id'|'active'|'createdAt'|'updatedAt'>;duplicateId?:string;errors:string[]}
